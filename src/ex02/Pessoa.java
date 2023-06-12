@@ -26,17 +26,55 @@ public class Pessoa {
         this.peso = peso;
     }
 
-    public void exibirPessoa(){
+    public void envelhecer(int anos) {
+        if (this.idade < 21) {
+            for (int i = this.idade; i < this.idade + anos; i++) {
+                crescer(0.5);
+            }
+            ;
+        }
+        this.idade += anos;
+    }
+
+    public void engordar(double pesoGanho) {
+        if (pesoGanho < 0) {
+            System.out.println("PesoGanho inválido");
+        } else if (this.peso == 0) {
+            System.out.println("Atenção: O peso inicial é inválido, não é possível engordar");
+        } else {
+            this.peso += pesoGanho;
+        }
+    }
+
+    public void emagrecer(double pesoPerdido) {
+        if (pesoPerdido < 0) {
+            System.out.println("PesoPerdido inválido");
+        } else if (this.peso == 0) {
+            System.out.println("Atenção: O peso inicial é inválido, não é possível emagrecer");
+        } else {
+            this.peso -= pesoPerdido;
+        }
+    }
+
+    public void crescer(double alturaGanha) {
+        if (alturaGanha < 0) {
+            System.out.println("AlturaGanha inválida");
+        } else {
+            this.altura += alturaGanha;
+        }
+    }
+
+    public void exibirPessoa() {
         System.out.printf(
                 "Nome: %s %n" +
-                "Idade: %d anos%n" +
-                "Altura: %.2f m %n", this.nome, this.idade, this.altura);
-        if (peso == 0){
-            System.out.println("Peso: Não informado");
-        } else if (peso < 0){
-            System.out.println("Peso: Valor inválido");
+                        "Idade: %d anos%n" +
+                        "Altura: %.2f cm %n", this.nome, this.idade, this.altura);
+        if (peso == 0) {
+            System.out.println("Peso: Não informado \n");
+        } else if (peso < 0) {
+            System.out.println("Peso: Valor inválido \n");
         } else {
-            System.out.printf("Peso: %.2f Kg", peso);
+            System.out.printf("Peso: %.2f Kg %n", peso);
         }
     }
 }
