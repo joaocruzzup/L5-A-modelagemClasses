@@ -2,8 +2,6 @@
 
 Esse repositório é referente a criação de programas criados para a lista de exercícios A - Modelagem de Classes
 
-**OBS.: O enunciado de cada exercício está como comentário na classe de cada exercício**.
-
 ---
 
 # ⚙️ Algoritmos criados
